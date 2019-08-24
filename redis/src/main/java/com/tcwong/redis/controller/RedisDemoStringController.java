@@ -12,7 +12,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-@RestController
+/**
+ * Redis String数据 类型的操作
+ * @author tcwong
+ */
+//@RestController
 public class RedisDemoStringController {
 
     @Autowired
