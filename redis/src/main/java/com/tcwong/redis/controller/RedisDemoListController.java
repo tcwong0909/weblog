@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author tcwong
  */
-@RestController
+//@RestController
 public class RedisDemoListController {
 
     @Autowired
