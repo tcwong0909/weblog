@@ -13,7 +13,7 @@ import java.util.Set;
 /**
  * Redis Hash数据 类型的操作
  */
-@RestController
+//@RestController
 public class RedisDemoHashController {
 
     @Autowired
