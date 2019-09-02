@@ -9,7 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-@RestController
+/**Redis Set数据 类型的操作
+ *
+ */
+//@RestController
 public class RedisDemoSetController {
 
     @Autowired
