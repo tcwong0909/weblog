@@ -22,6 +22,7 @@ public class RedisDemoListController {
 
     /**
      * 向列表左侧添加数据
+     *
      * @param name
      */
     @PostMapping("/test1")
@@ -31,6 +32,7 @@ public class RedisDemoListController {
 
     /**
      * 向列表右侧添加数据
+     *
      * @param name
      */
     @PostMapping("/test2")
@@ -52,6 +54,7 @@ public class RedisDemoListController {
 
     /**
      * 查询列表中指定索引的值
+     *
      * @param index
      * @return
      */
@@ -63,6 +66,7 @@ public class RedisDemoListController {
 
     /**
      * 查询列表指定范围内的值
+     *
      * @param key
      * @param sIndex
      * @param eIndex
@@ -76,6 +80,7 @@ public class RedisDemoListController {
 
     /**
      * 修改列表中 指定索引的值
+     *
      * @param key
      * @param index
      * @param object
@@ -87,6 +92,7 @@ public class RedisDemoListController {
 
     /**
      * 截取列表中指定范围内的值
+     *
      * @param key
      * @param sIndex
      * @param eIndex
@@ -98,6 +104,7 @@ public class RedisDemoListController {
 
     /**
      * 移除列表中指定索引和指定值
+     *
      * @param key
      * @param index
      * @param object
@@ -111,6 +118,7 @@ public class RedisDemoListController {
 
     /**
      * 弹出列表左侧的值
+     *
      * @param key
      * @return
      */
@@ -122,6 +130,7 @@ public class RedisDemoListController {
 
     /**
      * 弹出列表右侧的值
+     *
      * @param key
      * @param time
      * @return
@@ -134,6 +143,7 @@ public class RedisDemoListController {
 
     /**
      * 弹出指定列表右侧的值，并把值添加到另一指定列表的左侧
+     *
      * @param key1
      * @param key2
      * @param time

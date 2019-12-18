@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-/**Redis Set数据 类型的操作
- *
+/**
+ * Redis Set数据 类型的操作
  */
 //@RestController
 public class RedisDemoSetController {
@@ -20,6 +20,7 @@ public class RedisDemoSetController {
 
     /**
      * 添加set类型，并且如果存在的key-value，则不会重复再添加
+     *
      * @param key
      * @param object
      * @return
@@ -32,6 +33,7 @@ public class RedisDemoSetController {
 
     /**
      * 比较两个集合的不同值，并返回第一个key 的 所有不同值
+     *
      * @param key1
      * @param key2
      * @return
@@ -44,6 +46,7 @@ public class RedisDemoSetController {
 
     /**
      * 第一个集合 和 多个集合 比较，并返回第一个集合 不同的值Set
+     *
      * @return
      */
     @PostMapping("/test3")
@@ -57,6 +60,7 @@ public class RedisDemoSetController {
 
     /**
      * 比较第一个和第二个集合的差值，并把第一个集合的差值添加至第三个里面
+     *
      * @param key1
      * @param key2
      * @param key3
@@ -69,7 +73,8 @@ public class RedisDemoSetController {
     }
 
     /**
-     *随机返回指定集合中的指定数量的值
+     * 随机返回指定集合中的指定数量的值
+     *
      * @param key
      * @param index
      * @return
@@ -81,7 +86,8 @@ public class RedisDemoSetController {
     }
 
     /**
-     *两个集合的交集
+     * 两个集合的交集
+     *
      * @param key1
      * @param key2
      * @return
@@ -94,6 +100,7 @@ public class RedisDemoSetController {
 
     /**
      * 集合2和集1的交集，并把交集添加至集合3
+     *
      * @param key1
      * @param key2
      * @param key3
@@ -107,6 +114,7 @@ public class RedisDemoSetController {
 
     /**
      * 集合的并集
+     *
      * @param key1
      * @param key2
      * @return
@@ -119,19 +127,21 @@ public class RedisDemoSetController {
 
     /**
      * 集合1和集合2的并集，并添加至集合3
+     *
      * @param key1
      * @param key2
      * @param key3
      * @return
      */
     @PostMapping("/test9")
-    public Long test9(String key1,String key2, String key3) {
+    public Long test9(String key1, String key2, String key3) {
         Long aLong = redisTemplate.opsForSet().unionAndStore(key1, key2, key3);
         return aLong;
     }
 
     /**
      * 返回指定集合的所有值
+     *
      * @param key
      * @return
      */
@@ -143,6 +153,7 @@ public class RedisDemoSetController {
 
     /**
      * 判断指定集合中是否有指定value
+     *
      * @param key
      * @param value
      * @return
@@ -154,7 +165,8 @@ public class RedisDemoSetController {
     }
 
     /**
-     *将指定集合的值移动至集合2
+     * 将指定集合的值移动至集合2
+     *
      * @param key1
      * @param value
      * @param key2
@@ -168,6 +180,7 @@ public class RedisDemoSetController {
 
     /**
      * 随机返回指定集合的一个值
+     *
      * @param key
      * @return
      */
@@ -179,6 +192,7 @@ public class RedisDemoSetController {
 
     /**
      * 随机返回指定集合中的指定数量的值
+     *
      * @param key
      * @param num
      * @return
@@ -191,6 +205,7 @@ public class RedisDemoSetController {
 
     /**
      * 随机弹出指定集合的一个值
+     *
      * @param key
      * @return
      */
@@ -202,6 +217,7 @@ public class RedisDemoSetController {
 
     /**
      * 随机弹出指定集合的指定数量的值
+     *
      * @param key
      * @param num
      * @return

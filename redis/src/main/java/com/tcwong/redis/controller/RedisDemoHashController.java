@@ -21,17 +21,19 @@ public class RedisDemoHashController {
 
     /**
      * 添加 key-value
+     *
      * @param key
      * @param hkey
      * @param hvalue
      */
     @PostMapping("/test1")
-    public void test1(String key,String hkey, String hvalue) {
-        redisTemplate.opsForHash().put(key,hkey,hvalue);
+    public void test1(String key, String hkey, String hvalue) {
+        redisTemplate.opsForHash().put(key, hkey, hvalue);
     }
 
     /**
      * 批量添加key-value
+     *
      * @param key
      */
     @PostMapping("/test2")
@@ -45,6 +47,7 @@ public class RedisDemoHashController {
 
     /**
      * 获取 指定对象所有的 hash 值
+     *
      * @param key
      * @return
      */
@@ -56,6 +59,7 @@ public class RedisDemoHashController {
 
     /**
      * 获取指定对象的所有key
+     *
      * @param key
      * @return
      */
@@ -67,6 +71,7 @@ public class RedisDemoHashController {
 
     /**
      * 获取指定对象的所有value
+     *
      * @param key
      * @return
      */
@@ -78,6 +83,7 @@ public class RedisDemoHashController {
 
     /**
      * 获取指定对象的指定 key 的 value
+     *
      * @param key
      * @param hkey
      * @return
@@ -90,6 +96,7 @@ public class RedisDemoHashController {
 
     /**
      * 根据指定对象的key  删除value值
+     *
      * @param key
      * @param hkey
      * @return
@@ -102,6 +109,7 @@ public class RedisDemoHashController {
 
     /**
      * 获取指定对象的特定key 对应的value 的长度
+     *
      * @param key
      * @param hkey
      * @return

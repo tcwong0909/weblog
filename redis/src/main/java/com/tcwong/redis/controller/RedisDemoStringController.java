@@ -14,13 +14,14 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Redis String数据 类型的操作
+ *
  * @author tcwong
  */
 //@RestController
 public class RedisDemoStringController {
 
     @Autowired
-    private RedisTemplate redisTemplate ;
+    private RedisTemplate redisTemplate;
 
     /**
      * 添加数据
@@ -28,8 +29,8 @@ public class RedisDemoStringController {
     @PostMapping("/test1")
     public void test1() {
         User user = new User(1, "su", new Date());
-        redisTemplate.opsForValue().set("name","su");
-        redisTemplate.opsForValue().set("user",user);
+        redisTemplate.opsForValue().set("name", "su");
+        redisTemplate.opsForValue().set("user", user);
     }
 
     /**
@@ -37,7 +38,7 @@ public class RedisDemoStringController {
      */
     @PostMapping("/test2")
     public void test2() {
-        redisTemplate.opsForValue().set("age",18,10000, TimeUnit.MILLISECONDS);
+        redisTemplate.opsForValue().set("age", 18, 10000, TimeUnit.MILLISECONDS);
     }
 
     /**
@@ -54,6 +55,7 @@ public class RedisDemoStringController {
 
     /**
      * 原子操作
+     *
      * @return
      */
     @PostMapping("/test4")
@@ -64,6 +66,7 @@ public class RedisDemoStringController {
 
     /**
      * 追加数据
+     *
      * @return
      */
     @PostMapping("/test5")
@@ -74,6 +77,7 @@ public class RedisDemoStringController {
 
     /**
      * 获取数据
+     *
      * @return
      */
     @PostMapping("/test6")
@@ -84,6 +88,7 @@ public class RedisDemoStringController {
 
     /**
      * 批量获取数据
+     *
      * @return
      */
     @PostMapping("/test7")
@@ -98,6 +103,7 @@ public class RedisDemoStringController {
 
     /**
      * 自增元算
+     *
      * @return
      */
     @PostMapping("/test8")

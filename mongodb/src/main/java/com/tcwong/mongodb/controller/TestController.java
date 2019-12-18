@@ -17,7 +17,7 @@ public class TestController {
     }
 
     @PostMapping("/test2")
-    public void test2(@RequestBody Map<Object,Object> map) {
+    public void test2(@RequestBody Map<Object, Object> map) {
         Set<Object> objects = map.keySet();
         for (Object object : objects) {
             Object o = map.get(object);

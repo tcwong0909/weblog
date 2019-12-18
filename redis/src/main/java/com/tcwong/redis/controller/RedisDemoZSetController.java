@@ -20,13 +20,14 @@ public class RedisDemoZSetController {
 
     /**
      * 添加数据 并按score 排序  有相同的key-value score 会累加
+     *
      * @param key
      * @param value
      * @param score
      * @return
      */
     @PostMapping("/test1")
-    public Boolean test1(String key,String value,Double score) {
+    public Boolean test1(String key, String value, Double score) {
         Boolean aBoolean = redisTemplate.opsForZSet().add(key, value, score);
         return aBoolean;
     }
@@ -43,6 +44,7 @@ public class RedisDemoZSetController {
 
     /**
      * 在指定排序范围内 集合的值数量
+     *
      * @param key
      * @param score1
      * @param score2
@@ -56,19 +58,21 @@ public class RedisDemoZSetController {
 
     /**
      * 集合内指定值 排序值增加
+     *
      * @param key
      * @param value
      * @param score
      * @return
      */
     @PostMapping("/test4")
-    public Double test4(String key,String value,Double score) {
+    public Double test4(String key, String value, Double score) {
         Double aDouble = redisTemplate.opsForZSet().incrementScore(key, value, score);
         return aDouble;
     }
 
     /**
      * 集合1和集合2交集，并将交集排序值 相加
+     *
      * @param key1
      * @param key2
      * @param key3
@@ -82,6 +86,7 @@ public class RedisDemoZSetController {
 
     /**
      * 指定下标范围内的集合值，第一个值下标为0，最后一个为-1
+     *
      * @param key
      * @param sIndex
      * @param eIndex
@@ -104,25 +109,27 @@ public class RedisDemoZSetController {
 
     /**
      * 指定排序范围内的集合值
+     *
      * @param key
      * @param sScore
      * @param eScore
      * @return
      */
     @PostMapping("/test8")
-    public Set test8(String key,Double sScore,Double eScore) {
+    public Set test8(String key, Double sScore, Double eScore) {
         Set set = redisTemplate.opsForZSet().rangeByScore(key, sScore, eScore);
         return set;
     }
 
     @PostMapping("/test9")
-    public Long test9(String key1,String key2, String key3) {
+    public Long test9(String key1, String key2, String key3) {
         Long aLong = redisTemplate.opsForZSet().intersectAndStore(key1, key2, key3);
         return aLong;
     }
 
     /**
      * 集合中指定值的下标
+     *
      * @param key
      * @param value
      * @return
@@ -135,6 +142,7 @@ public class RedisDemoZSetController {
 
     /**
      * 移除集合中指定值
+     *
      * @param key
      * @param value
      * @return
@@ -148,6 +156,7 @@ public class RedisDemoZSetController {
 
     /**
      * 移除集合中指定下标范围内的值
+     *
      * @param key
      * @param sIndex
      * @param eIndex
@@ -161,6 +170,7 @@ public class RedisDemoZSetController {
 
     /**
      * 移除集合中指定排序范围内的值
+     *
      * @param key
      * @param sScore
      * @param eDouble
@@ -174,6 +184,7 @@ public class RedisDemoZSetController {
 
     /**
      * 反向获取指定集合中的指定范围值
+     *
      * @param key
      * @param sIndex
      * @param eIndex
@@ -187,6 +198,7 @@ public class RedisDemoZSetController {
 
     /**
      * 集合的并集添加至新集合，重叠的value, 排序值相加
+     *
      * @param key1
      * @param key2
      * @param key3
