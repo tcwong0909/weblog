@@ -5,6 +5,9 @@ import org.springframework.data.redis.core.ValueOperations;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * redis锁
+ */
 public class RedisLockImpl implements RedisLock {
 
     private RedisTemplate redisTemplate;
@@ -26,7 +29,12 @@ public class RedisLockImpl implements RedisLock {
         this.maxTryTime = maxTryTime;
         this.valueOperations = redisTemplate.opsForValue();
     }
-    private Boolean tryLock() {
+
+    /**
+     * 获取锁
+     * @return
+     */
+    private boolean tryLock() {
         while (this.tryTime >= 0) {
             Long expires = System.currentTimeMillis() + this.expireTime ;
             String expiresValue = String.valueOf(expires);
@@ -53,22 +61,39 @@ public class RedisLockImpl implements RedisLock {
         return false;
     }
 
+    /**
+     * 获取锁
+     * @param tryMillSecondsTime 尝试时长
+     * @return
+     */
     @Override
     public boolean tryLock(long tryMillSecondsTime) {
         this.tryTime = tryMillSecondsTime > this.maxTryTime ? maxTryTime : tryMillSecondsTime;
         return this.tryLock();
     }
 
+    /**
+     * 获取锁
+     * @param tryTime 尝试时间
+     * @param timeUnit 时间类型
+     * @return
+     */
     @Override
     public boolean tryLock(long tryTime, TimeUnit timeUnit) {
         return this.tryLock(timeUnit.toMillis(tryTime));
     }
 
+    /**
+     * 释放锁
+     */
     @Override
     public void unLock() {
         this.redisTemplate.delete(this.key);
     }
 
+    /**
+     * 重制锁
+     */
     @Override
     public void reInit() {
         this.redisTemplate.expire(this.key, 0 , TimeUnit.MILLISECONDS);
