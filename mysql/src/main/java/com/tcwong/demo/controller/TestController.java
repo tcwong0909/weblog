@@ -21,4 +21,13 @@ public class TestController {
         List<Student> students = studentMapper.selectByExample(studentExample);
         return students;
     }
+
+    @GetMapping("/test2")
+    public Object test2() {
+        Student student = new Student();
+        int insert = studentMapper.insert(student);
+        return insert;
+    }
+
+
 }

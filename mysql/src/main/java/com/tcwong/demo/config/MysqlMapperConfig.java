@@ -12,7 +12,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 @MapperScan(basePackages = "com.tcwong.demo.dao.mysql"
         ,sqlSessionFactoryRef = "mysqlSqlSessionFactory",sqlSessionTemplateRef = "mysqlSqlSessionTemplate")
 public class MysqlMapperConfig {

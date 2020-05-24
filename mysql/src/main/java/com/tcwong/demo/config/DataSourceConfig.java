@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 public class DataSourceConfig {
 
     @Primary
@@ -17,11 +17,11 @@ public class DataSourceConfig {
     public DataSource mysqlDataSource() {
         return DruidDataSourceBuilder.create().build();
     }
-
-    @Bean
-    @ConditionalOnProperty(prefix = "spring.datasource.sqlserver")
-    public DataSource sqlserverDataSource() {
-        return DruidDataSourceBuilder.create().build();
-    }
+//
+//    @Bean
+//    @ConditionalOnProperty(prefix = "spring.datasource.sqlserver")
+//    public DataSource sqlserverDataSource() {
+//        return DruidDataSourceBuilder.create().build();
+//    }
 
 }

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 public class DataSourceConfig1 {
 
     @Value("${spring.datasource.mysql.username}")
@@ -20,14 +20,14 @@ public class DataSourceConfig1 {
     @Value("${spring.datasource.mysql.driver-class-name}")
     private String mysqlDriverClass;
 
-    @Value("${spring.datasource.sqlserver.username}")
-    private String sqlserverPassword;
-    @Value("${spring.datasource.sqlserver.password}")
-    private String sqlserverUserName;
-    @Value("${spring.datasource.sqlserver.url}")
-    private String sqlserverUrl;
-    @Value("${spring.datasource.sqlserver.driver-class-name}")
-    private String sqlserverDriverClass;
+//    @Value("${spring.datasource.sqlserver.username}")
+//    private String sqlserverPassword;
+//    @Value("${spring.datasource.sqlserver.password}")
+//    private String sqlserverUserName;
+//    @Value("${spring.datasource.sqlserver.url}")
+//    private String sqlserverUrl;
+//    @Value("${spring.datasource.sqlserver.driver-class-name}")
+//    private String sqlserverDriverClass;
 
     @Primary
     @Bean
@@ -40,14 +40,14 @@ public class DataSourceConfig1 {
         return druidDataSource;
     }
 
-    @Bean
-    public DataSource sqlserverDataSource() {
-        DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setUsername(sqlserverUserName);
-        druidDataSource.setPassword(sqlserverPassword);
-        druidDataSource.setUrl(sqlserverUrl);
-        druidDataSource.setDriverClassName(sqlserverDriverClass);
-        return druidDataSource;
-    }
+//    @Bean
+//    public DataSource sqlserverDataSource() {
+//        DruidDataSource druidDataSource = new DruidDataSource();
+//        druidDataSource.setUsername(sqlserverUserName);
+//        druidDataSource.setPassword(sqlserverPassword);
+//        druidDataSource.setUrl(sqlserverUrl);
+//        druidDataSource.setDriverClassName(sqlserverDriverClass);
+//        return druidDataSource;
+//    }
 
 }
