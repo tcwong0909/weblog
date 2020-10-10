@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mysql/demo.iml" filepath="$PROJECT_DIR$/mysql/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pattern/maven.iml" filepath="$PROJECT_DIR$/pattern/maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mergePPT/mergePPT.iml" filepath="$PROJECT_DIR$/mergePPT/mergePPT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/mongodb.iml" filepath="$PROJECT_DIR$/mongodb/mongodb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/weblog.iml" filepath="$PROJECT_DIR$/.idea/weblog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zookeeper/zookeeper.iml" filepath="$PROJECT_DIR$/zookeeper/zookeeper.iml" />
+    </modules>
+  </component>
+</project>
